@@ -25,6 +25,21 @@ const getVariables = (prevCode) => {
       return;
     }
 
+    if (line.startsWith("$importfromjs")) {
+      let words = line.split(" ");
+      if (words.length !== 3)
+        error(
+          "Syntax",
+          "Invalid type of import.",
+          `[ Line ${code.indexOf(line) + 1} ]`
+        );
+
+      let name = words[2];
+      let value = require("../../../" + words[1]);
+      vars[name] = value;
+      return;
+    }
+
     if (!/\$[a-z _]+\:/.test(line.trim()))
       error(
         "Syntax",
