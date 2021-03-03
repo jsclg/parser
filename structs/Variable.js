@@ -35,7 +35,7 @@ const getVariables = (prevCode) => {
         );
 
       let name = words[2];
-      let value = require("../../../" + words[1]);
+      let value = require("../../../../" + words[1]);
       vars[name] = value;
       return;
     }
