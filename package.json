@@ -1,6 +1,6 @@
 {
   "name": "@jsclg/parser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "JSCLG parser",
   "main": "index.js",
   "scripts": {
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/jsclg/parser/issues"
   },
-  "homepage": "https://github.com/jsclg/parser#readme"
+  "homepage": "https://github.com/jsclg/parser#readme",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
 }
