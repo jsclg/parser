@@ -1,2 +1,3 @@
 const { createLog } = require("./lib/log");
-module.exports.parse = createLog;
+module.exports.parseJSCLG = createLog;
+module.exports.default = createLog;

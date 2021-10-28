@@ -8,24 +8,24 @@ The official JSCLG parser.
 - This package parses code like this ↓
 
   ```
-  $greeting:hello everyone;
-  {{greeting}}
+  let name = squik;
+  import data.age from tests/export.test.js;
+  My name is {{name}} and i am {{age}} years old;
+
   ```
 
   into an array like this ↓
 
   ```js
-  ["hello everyone"];
+  ["My name is squik and i am 15 years old"];
   ```
 
 # Sample Code
 
 ```js
-const parse = require("@jsclg/parser");
+const { parseJSCLG } = require("@jsclg/parser");
 const file = process.argv.slice(2);
 const code = require("fs").readFileSync(file[0], "utf-8");
 
-parse(code).forEach((line) => {
-  console.log(line);
-});
+parseJSCLG(code).forEach(console.log);
 ```
